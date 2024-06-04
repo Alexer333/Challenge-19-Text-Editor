@@ -38,6 +38,7 @@ export const putDb = async (content) => {
 export const getDb = async () => {
     console.log("Obtaining all database notes!");
 
+    //Gets content from the databse, making consts for it and storing what was retrieved in result.value if anything was retrieved at all
     const jateDb = await openDB("jate", 1);
     const jx = jateDb.transaction("jate", "readonly");
       const store = jx.objectStore("jate");
