@@ -1,0 +1,11 @@
+{
+  "name": "jate",
+  "version": "1.0.0",
+  "description": "A text editor for making notes or snippets of code that can be retrieved later, with or without internet.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "MIT"
+}
