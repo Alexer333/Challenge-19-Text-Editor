@@ -36,14 +36,17 @@ export const putDb = async (content) => {
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
+    //Indication that the database notes are being obtained
     console.log("Obtaining all database notes!");
 
-    //Gets content from the databse, making consts for it and storing what was retrieved in result.value if anything was retrieved at all
+    //Opens the jate databse, initiating a read-only transaction 
     const jateDb = await openDB("jate", 1);
     const jx = jateDb.transaction("jate", "readonly");
+    //Retreieves the object store named Jate and makes a request to get an object with 1 key from the store, before then waiting for the request to be done.
       const store = jx.objectStore("jate");
       const request = store.get(1);
       const result = await request;
+    //Logs whether the retrieval was successful or not. 
       result
         ? console.log("Notes obtained from database:", result.value)
         : console.log("No notes have been found...");

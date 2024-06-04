@@ -28,8 +28,11 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // TODO: Implement asset caching
 registerRoute(
-  //Caches the assets for style, script, and worker
+  //Makes a callback check with request for the destinations of style, script, and worker, seeing if the request destination is in one of those locations, checking for 
+  //stylesheets, JS files, and workerscripts respectively. 
   ({ request }) => ["style", "script", "worker"].includes(request.destination),
+  //If it comes up true in one of the areas it has cacher make a cache asset, defining caching behavior for the matched requests, and then also having CacheableResponsePlugin 
+  //configure the behavior depending on the status code. 
   new Cacher({
     cacheName: "asset-cache", 
     plugins: [
