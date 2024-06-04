@@ -51,7 +51,6 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ["style-loader", "css-loader"],
-          exclude: [path.join(__dirname, 'src')]
         },
         {
           test: /\.m?js$/,
