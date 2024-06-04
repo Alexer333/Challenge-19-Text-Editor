@@ -4,7 +4,8 @@
   "description": "A text editor for making notes or snippets of code that can be retrieved later, with or without internet.",
   "main": "server.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "npm build"
   },
   "author": "",
   "license": "MIT"
